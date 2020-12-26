@@ -35,5 +35,5 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp $1 ~/.vimrc
 
 # Install plugin
-vim +PlugInstall +qall
+vim +PluginInstall +qall
 vim +GoInstallBinaries +qall
