@@ -34,6 +34,7 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 set backspace=indent,eol,start
+syntax on
 
 " COC.NVIM DEFAULT SETTINGS
 "
