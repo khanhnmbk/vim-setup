@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR= ./scripts
-OUTPUT_DIR=./output
+SCRIPT_DIR = ./scripts
 
 # Make sure GOPATH is set
 if [[ -z $GOPATH ]]
@@ -36,30 +35,3 @@ cp ${SCRIPT_DIR}/coc-settings.json ~/.vim
 # Install plugin
 vim +PluginInstall +qall
 vim +GoInstallBinaries +qall
-
-# generate sample ccls
-cd ${SCRIPT_DIR}
-
-case "$OSTYPE" in
-  solaris*) 
-	  echo "SOLARIS" 
-	  ;;
-  darwin*)  
-	  echo "OSX" 
-	  ./install_ccls_darwin.sh
-	  ;;
-  linux*)   
-	  echo "LINUX" 
-	  ;;
-  bsd*)     
-	  echo "BSD" 
-	  ;;
-  msys*)    
-	  echo "WINDOWS" 
-	  ;;
-  *)        
-	  echo "unknown: $OSTYPE" 
-	  ;;
-esac
-
-cd ..
