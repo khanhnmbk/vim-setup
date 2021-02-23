@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR= ./scripts
+SCRIPT_DIR=./scripts
 OUTPUT_DIR=./output
 
 # Make sure GOPATH is set
 if [[ -z $GOPATH ]]
 then
 	echo "Empty GOPATH"
-	exit 1
+#	exit 1
 fi
 
 # Make sure GOBIN is set
 if [[ -z $GOBIN ]]
 then
 	echo "Empty GOBIN"
-	exit 1
+#	exit 1
 fi
 
 # Check if PATH includes GOBIN
@@ -50,6 +50,7 @@ case "$OSTYPE" in
 	  ;;
   linux*)   
 	  echo "LINUX" 
+	  ./install_ccls_linux.sh
 	  ;;
   bsd*)     
 	  echo "BSD" 
