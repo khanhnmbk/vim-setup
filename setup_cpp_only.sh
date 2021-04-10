@@ -12,9 +12,12 @@ case "$OSTYPE" in
   darwin*)  
 	  echo "OSX" 
 	  ./install_ccls_darwin.sh
+	  ./install_clang_format_darwin.sh
 	  ;;
   linux*)   
 	  echo "LINUX" 
+	  ./install_ccls_linux.sh
+	  ./install_clang_format_linux.sh
 	  ;;
   bsd*)     
 	  echo "BSD" 
