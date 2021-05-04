@@ -7,6 +7,8 @@ Plugin 'fatih/vim-go'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'preservim/nerdtree'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 call vundle#end()
 
 " Colors
@@ -39,6 +41,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
+set noswapfile
+
 
 " COC.NVIM DEFAULT SETTINGS
 "
@@ -168,7 +172,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 "let g:go_def_mapping_enabled = 0
-       map <C-K> :py3f /usr/local/Cellar/clang-format/11.1.0/share/clang/clang-format.py<cr>       imap <C-K> <c-o>:py3f /usr/local/Cellar/clang-format/11.1.0/share/clang/clang-format.py<cr>   
-       map <C-K> :py3f /usr/local/Cellar/clang-format/11.1.0/share/clang/clang-format.py<cr> 
-       imap <C-K> <c-o>:py3f /usr/local/Cellar/clang-format/11.1.0/share/clang/clang-format.py<cr> 
    
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
