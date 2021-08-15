@@ -32,15 +32,3 @@ then
 	echo "latest llvm library not found"
 	exit 1
 fi
-
-echo ${latest_dir}
-
-mkdir -p ${OUTPUT_DIR}
-
-cat >> ${OUTPUT_DIR}/ccls << EOF
-clang
--ccc-install-dir
-${latest_dir}/bin
-%cpp -std=c++11
-%cpp -stdlib=libc++
-EOF

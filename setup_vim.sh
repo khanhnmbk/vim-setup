@@ -24,6 +24,9 @@ then
 	export PATH=$PATH:$GOBIN
 fi
 
+# Install Node for ncoc vim
+curl -sL install-node.now.sh/lts | bash
+
 # Install Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
@@ -36,6 +39,9 @@ cp ${SCRIPT_DIR}/coc-settings.json ~/.vim
 # Install plugin
 vim +PluginInstall +qall
 vim +GoInstallBinaries +qall
+
+# Install rust coc analyzer
+vim +CocInstall coc-rust-analyzer +qall
 
 # generate sample ccls
 cd ${SCRIPT_DIR}

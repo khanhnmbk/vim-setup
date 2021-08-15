@@ -9,8 +9,12 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'preservim/nerdtree'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'ojroques/vim-oscyank'
 call vundle#end()
 
+syntax enable
+filetype plugin indent on
 " Colors
 "
 set t_Co=256
@@ -19,9 +23,6 @@ colorscheme PaperColor
 
 " Settings
 "
-filetype on
-filetype plugin on
-filetype indent on
 nnoremap <S-Left> :tabprevious<CR> 
 nnoremap <S-Right> :tabnext<CR> 
 nnoremap <C-j> :tabprevious<CR>
@@ -36,11 +37,11 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 set backspace=indent,eol,start
-syntax on
+"syntax on
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set noexpandtab
+set expandtab
 set noswapfile
 
 
@@ -172,6 +173,16 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 "let g:go_def_mapping_enabled = 0
-   
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
+let g:coc_disable_startup_warning = 1
+
+map <C-F> :Files<cr>
+
+" vim-powered terminal in split window
+map <Leader>t :term ++close<cr>
+tmap <Leader>t <c-w>:term ++close<cr>
+" vim-powered terminal in new tab
+map <Leader>T :tab term ++close<cr>
+tmap <Leader>T <c-w>:tab term ++close<cr>
+
+let g:rustfmt_autosave = 1
+vnoremap <leader>c :OSCYank<CR>

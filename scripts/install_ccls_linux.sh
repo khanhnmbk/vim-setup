@@ -13,13 +13,3 @@ sudo snap install ccls --classic
 
 # install llvm
 sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-
-mkdir -p ${OUTPUT_DIR}
-
-cat >> ${OUTPUT_DIR}/ccls << EOF
-clang
--ccc-install-dir
-/usr/bin
-%cpp -std=c++11
-%cpp -stdlib=libc++
-EOF
