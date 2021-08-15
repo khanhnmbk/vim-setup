@@ -28,8 +28,7 @@ fi
 curl -sL install-node.now.sh/lts | bash
 
 # Install Vundle
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Copy vimrc
 cp ${SCRIPT_DIR}/vimrc  ~/.vimrc
@@ -42,7 +41,7 @@ vim +PlugInstall +qall
 vim +GoInstallBinaries +qall
 
 # Install rust coc analyzer
-vim +CocInstall coc-rust-analyzer +qall
+vim -c 'CocInstall coc-rust-analyzer|q'
 
 # generate sample ccls
 cd ${SCRIPT_DIR}
