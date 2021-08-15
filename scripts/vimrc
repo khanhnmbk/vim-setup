@@ -1,17 +1,16 @@
 " Plugins
 " 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'fatih/vim-go'
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'preservim/nerdtree'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'ojroques/vim-oscyank'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'fatih/vim-go'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'ojroques/vim-oscyank'
+call plug#end()
 
 syntax enable
 filetype plugin indent on

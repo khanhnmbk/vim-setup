@@ -28,7 +28,8 @@ fi
 curl -sL install-node.now.sh/lts | bash
 
 # Install Vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Copy vimrc
 cp ${SCRIPT_DIR}/vimrc  ~/.vimrc
@@ -37,7 +38,7 @@ cp ${SCRIPT_DIR}/vimrc  ~/.vimrc
 cp ${SCRIPT_DIR}/coc-settings.json ~/.vim
 
 # Install plugin
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 vim +GoInstallBinaries +qall
 
 # Install rust coc analyzer
