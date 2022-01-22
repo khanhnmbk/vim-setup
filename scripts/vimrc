@@ -10,6 +10,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'ojroques/vim-oscyank'
+Plug 'vimlab/split-term.vim'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 syntax enable
@@ -186,3 +188,10 @@ tmap <Leader>T <c-w>:tab term ++close<cr>
 
 let g:rustfmt_autosave = 1
 vnoremap <leader>c :OSCYank<CR>
+
+" Termial plugin
+set splitright
+set splitbelow
+map <Leader>t :Term<cr>
+map <Leader>tt :VTerm<cr>
+map <Leader>ttt :TTerm<cr>
