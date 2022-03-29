@@ -187,7 +187,7 @@ map <Leader>T :tab term ++close<cr>
 tmap <Leader>T <c-w>:tab term ++close<cr>
 
 let g:rustfmt_autosave = 1
-vnoremap <leader>c :OSCYank<CR>
+vnoremap <C-y> :OSCYank<CR>
 
 " Termial plugin
 set splitright
