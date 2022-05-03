@@ -25,23 +25,20 @@ then
 fi
 
 # Install Node for ncoc vim
-curl -sL install-node.now.sh/lts | bash
+curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh | bash
+sudo apt install nodejs
 
-# Install Vundle
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
+# Install Vim-Plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+       
 # Copy vimrc
-cp ${SCRIPT_DIR}/vimrc  ~/.vimrc
-
-# Copy coc-settings.json
-cp ${SCRIPT_DIR}/coc-settings.json ~/.vim
+mkdir -p $HOME/.config/nvim/
+cp ${SCRIPT_DIR}/vimrc   $HOME/.config/nvim/init.vim
 
 # Install plugin
-vim +PlugInstall +qall
-vim +GoInstallBinaries +qall
-
-# Install rust coc analyzer
-vim -c 'CocInstall coc-rust-analyzer|q'
+nvim +PlugInstall +qall
+nvim +GoInstallBinaries +qall
 
 # generate sample ccls
 cd ${SCRIPT_DIR}
@@ -52,12 +49,10 @@ case "$OSTYPE" in
 	  ;;
   darwin*)  
 	  echo "OSX" 
-	  ./install_ccls_darwin.sh
 	  ./install_clang_format_darwin.sh
 	  ;;
   linux*)   
 	  echo "LINUX" 
-	  ./install_ccls_linux.sh
 	  ./install_clang_format_linux.sh
 	  ;;
   bsd*)     
