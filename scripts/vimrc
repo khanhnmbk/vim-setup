@@ -177,7 +177,10 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 "let g:go_def_mapping_enabled = 0
 let g:coc_disable_startup_warning = 1
 
+" Key mapping for fzf
 map <C-F> :Files<cr>
+map <C-G> :GFiles<cr>
+map <C-B> :Buffers<cr>
 
 " vim-powered terminal in split window
 map <Leader>t :term ++close<cr>
