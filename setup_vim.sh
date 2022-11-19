@@ -25,8 +25,7 @@ then
 fi
 
 # Install Node for ncoc vim
-curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh | bash
-sudo apt install nodejs
+curl -sL https://deb.nodesource.com/setup_18.x -o /tmp/nodesource_setup.sh | bash
 
 # Install Vim-Plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \

@@ -1,6 +1,6 @@
 " Plugins
 " 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -45,6 +45,8 @@ set shiftwidth=4
 set expandtab
 set noswapfile
 set cursorline
+" disable mouse
+set mouse=
 
 
 " COC.NVIM DEFAULT SETTINGS
